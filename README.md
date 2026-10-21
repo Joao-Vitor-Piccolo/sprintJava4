@@ -7,7 +7,6 @@ API REST em Spring Boot para gerenciar managers, vendedores, clientes e vendas. 
 - Java 21
 - Maven
 - Acesso ao banco Oracle da FIAP
-- VPN ou rede da FIAP (sem isso a conexão não sobe)
 
 ## Como rodar
 

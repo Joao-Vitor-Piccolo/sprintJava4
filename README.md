@@ -32,24 +32,24 @@ mvn -DskipTests compile
 
 ## Endpoints
 
-| Recurso | Método | Caminho |
-|---|---|---|
-| Manager | GET, POST | `/manager` |
-| Manager | GET, DELETE | `/manager/{id}` |
-| Manager | PUT | `/manager` |
-| Customer | GET, POST | `/customer` |
-| Customer | GET, DELETE | `/customer/{id}` |
-| Customer | PUT | `/customer` |
-| Salesman | GET, POST | `/salesman` |
-| Salesman | GET, DELETE | `/salesman/{id}` |
-| Salesman | GET | `/salesman/nome/{nome}` |
-| Salesman | PUT | `/salesman` |
-| Sale | GET, POST | `/sale` |
-| Sale | GET, DELETE | `/sale/{id}` |
-| Sale | PUT | `/sale` |
-| Sale | GET | `/sale/salesman/{idSalesman}` |
-| Sale | PUT | `/sale/{id}/iniciar/{idSalesman}` |
-| Sale | PUT | `/sale/{id}/finalizar/{idSalesman}` |
+| Recurso  | Método      | Caminho                             |
+| -------- | ----------- | ----------------------------------- |
+| Manager  | GET, POST   | `/manager`                          |
+| Manager  | GET, DELETE | `/manager/{id}`                     |
+| Manager  | PUT         | `/manager`                          |
+| Customer | GET, POST   | `/customer`                         |
+| Customer | GET, DELETE | `/customer/{id}`                    |
+| Customer | PUT         | `/customer`                         |
+| Salesman | GET, POST   | `/salesman`                         |
+| Salesman | GET, DELETE | `/salesman/{id}`                    |
+| Salesman | GET         | `/salesman/nome/{nome}`             |
+| Salesman | PUT         | `/salesman`                         |
+| Sale     | GET, POST   | `/sale`                             |
+| Sale     | GET, DELETE | `/sale/{id}`                        |
+| Sale     | PUT         | `/sale`                             |
+| Sale     | GET         | `/sale/salesman/{idSalesman}`       |
+| Sale     | PUT         | `/sale/{id}/iniciar/{idSalesman}`   |
+| Sale     | PUT         | `/sale/{id}/finalizar/{idSalesman}` |
 
 Exemplo de cadastro de cliente:
 

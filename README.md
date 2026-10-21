@@ -30,31 +30,35 @@ Para só compilar:
 mvn -DskipTests compile
 ```
 
+## Deploy
+
+API publicada em [https://sprintjava4-1.onrender.com](https://sprintjava4-1.onrender.com).
+
 ## Endpoints
 
-| Recurso  | Método      | Caminho                             |
-| -------- | ----------- | ----------------------------------- |
-| Manager  | GET, POST   | `/manager`                          |
-| Manager  | GET, DELETE | `/manager/{id}`                     |
-| Manager  | PUT         | `/manager`                          |
-| Customer | GET, POST   | `/customer`                         |
-| Customer | GET, DELETE | `/customer/{id}`                    |
-| Customer | PUT         | `/customer`                         |
-| Salesman | GET, POST   | `/salesman`                         |
-| Salesman | GET, DELETE | `/salesman/{id}`                    |
-| Salesman | GET         | `/salesman/nome/{nome}`             |
-| Salesman | PUT         | `/salesman`                         |
-| Sale     | GET, POST   | `/sale`                             |
-| Sale     | GET, DELETE | `/sale/{id}`                        |
-| Sale     | PUT         | `/sale`                             |
-| Sale     | GET         | `/sale/salesman/{idSalesman}`       |
-| Sale     | PUT         | `/sale/{id}/iniciar/{idSalesman}`   |
-| Sale     | PUT         | `/sale/{id}/finalizar/{idSalesman}` |
+| Recurso  | Método      | URL                                                                |
+| -------- | ----------- | ------------------------------------------------------------------ |
+| Manager  | GET, POST   | https://sprintjava4-1.onrender.com/manager                          |
+| Manager  | GET, DELETE | https://sprintjava4-1.onrender.com/manager/{id}                     |
+| Manager  | PUT         | https://sprintjava4-1.onrender.com/manager                          |
+| Customer | GET, POST   | https://sprintjava4-1.onrender.com/customer                         |
+| Customer | GET, DELETE | https://sprintjava4-1.onrender.com/customer/{id}                    |
+| Customer | PUT         | https://sprintjava4-1.onrender.com/customer                         |
+| Salesman | GET, POST   | https://sprintjava4-1.onrender.com/salesman                         |
+| Salesman | GET, DELETE | https://sprintjava4-1.onrender.com/salesman/{id}                    |
+| Salesman | GET         | https://sprintjava4-1.onrender.com/salesman/nome/{nome}             |
+| Salesman | PUT         | https://sprintjava4-1.onrender.com/salesman                         |
+| Sale     | GET, POST   | https://sprintjava4-1.onrender.com/sale                             |
+| Sale     | GET, DELETE | https://sprintjava4-1.onrender.com/sale/{id}                        |
+| Sale     | PUT         | https://sprintjava4-1.onrender.com/sale                             |
+| Sale     | GET         | https://sprintjava4-1.onrender.com/sale/salesman/{idSalesman}       |
+| Sale     | PUT         | https://sprintjava4-1.onrender.com/sale/{id}/iniciar/{idSalesman}   |
+| Sale     | PUT         | https://sprintjava4-1.onrender.com/sale/{id}/finalizar/{idSalesman} |
 
 Exemplo de cadastro de cliente:
 
 ```bash
-curl -X POST http://localhost:8080/customer \
+curl -X POST https://sprintjava4-1.onrender.com/customer \
   -H "Content-Type: application/json" \
   -d '{"name":"Maria","cpf":"12345678900","phone":"11999999999"}'
 ```
@@ -62,7 +66,7 @@ curl -X POST http://localhost:8080/customer \
 Exemplo de listar vendas de um vendedor:
 
 ```bash
-curl http://localhost:8080/sale/salesman/1
+curl https://sprintjava4-1.onrender.com/sale/salesman/1
 ```
 
 ## Integrantes

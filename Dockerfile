@@ -1,22 +1,11 @@
-# Usa a imagem oficial do Java (Eclipse Temurin) versão 21 em Alpine
-FROM eclipse-temurin:21-jdk-alpine
-
-# Define o diretório de trabalho dentro do container
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn -B -DskipTests package
 
-# Copia todos os arquivos do projeto para dentro do container
-COPY . ./
-
-# Dá permissão de execução ao Maven Wrapper
-RUN chmod +x mvnw
-
-# Faz o build do projeto Spring Boot com Maven
-# -DskipTests → ignora os testes durante o deploy
-RUN ./mvnw -B -DskipTests clean package
-
-# Expõe a porta utilizada pela aplicação
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Inicia a aplicação Spring Boot
-# O Spring Boot gera o JAR executável dentro da pasta target
-CMD ["sh", "-c", "java -jar target/*.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8080}"]
